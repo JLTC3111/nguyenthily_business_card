@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ICUE Business Card</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css" />
+    <link rel="icon" type="image/png" href="public/favicon.png"> 
+</head>
+<body>
+    <div class="business-card-container">
+        <!-- Front of the Business Card -->
+        <div class="card-face front-card">
+          
+            <!-- Logo -->
+            <div class="logo-container">
+              <img src="public/logo.png" alt="ICUE Logo" />
+              <span class="company-name"></span>
+            </div>
+
+            <div class="geometry-container">
+                <img src="public/geometry.png" alt="ICUE Logo" />
+            </div>
+          
+            <!-- Name and Title -->
+            <div class="absolute bottom-8 left-8">
+              <p class="name">Nguyễn Thị Ly</p>
+              <p class="title">Support Specialist</p>
+            </div>
+          
+            <!-- Company QR Code -->
+            <div class="company-qr-code">
+                <img src="public/icue_qr_code.png" alt="QR Code" class="rounded" />
+            </div>
+            <!-- ICUE Text on Diagonal -->
+            <div class="diagonal-icue">🇻🇳🇬🇧</div>
+          
+          </div>
+
+        <!-- Back of the Business Card -->
+        <div class="card-face back-card">
+            <!-- Personal QR Code -->
+            <div class="personal-photo">
+                <img src="public/nguyenthily.png" alt="QR Code" class="rounded" />
+            </div>
+            <div class="flex flex-col gap-2">
+                <div class="contact-item">
+                    <span class="icon">📞</span> <!-- Phone icon -->
+                    <span class="text-content">+84 (379) 728 867</span>
+                </div>
+                <div class="contact-item">
+                    <span class="icon">☎️</span> <!-- Phone icon (for landline) -->
+                    <span class="text-content">+84 (24) 3772 8485</span>
+                </div>
+
+                <hr class="w-full border-t-[1.75px] border-white mb-2.5" />
+                <div class="contact-item">
+                    <span class="icon">📩</span> <!-- Email icon -->
+                    <span class="text-content">support@icue.vn</span>
+                </div>
+                <div class="contact-item">
+                    <span class="icon">&#127760;</span> <!-- Globe icon -->
+                    <span class="text-content">icue.vn</span>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</body>
+</html>

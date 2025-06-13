@@ -1,0 +1,249 @@
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f0f2f5;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+            padding: 20px;
+            box-sizing: border-box;
+        }
+        .business-card-container {
+            display: flex;
+            flex-direction: column;
+            gap: 2px;
+            /* Standard business card size for printing: 3.5 x 2 inches */
+            /* Scaled for display */
+            width: 350px; /* 3.5 inches * 100px/inch approx */
+            height: 200px; /* 2 inches * 100px/inch approx */
+        }
+        .card-face {
+            width: 100%;
+            height: 100%;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 5px;
+            box-sizing: border-box;
+            text-align: center;
+            position: relative;
+            overflow: hidden; /* For diagonal elements */
+        }
+        .front-card {
+            background-color: #ffffff; /* White background */
+            color: #333; /* Dark text for contrast */
+            justify-content: flex-start; /* Align content to top */
+            align-items: flex-start; /* Align content to left */
+            padding-top: 30px; /* Adjust padding */
+            padding-left: 30px;
+        }
+        .front-card .logo-container {
+            display: flex;
+            position: absolute;
+            align-items: center;
+            top: 15px;
+            left: 20px;
+            z-index: 1;
+        }
+        .front-card .logo-container img {
+            height: 25px; /* Adjusted logo size */
+        }
+        .front-card .company-name {
+            font-size: 1.5rem; /* Larger font for company name */
+            font-weight: 700;
+        }
+        .front-card .name {
+            font-size: .75rem;
+            font-weight: 600;
+            margin-bottom: 5px;
+            margin-left: 10.75rem;
+            color: #333;
+            line-height: 1;
+        }
+        .front-card .title {
+            text-align: left;
+            font-size: .625rem;
+            color: #555;
+            margin-left: 11rem;
+            margin-bottom: -1rem;
+        }
+
+        /* Diagonal red and gray elements for the front card */
+        .front-card::before, .front-card::after {
+            content: '';
+            position: absolute;
+            transform: rotate(-45deg);
+        }
+        
+        .front-card::after { /* Dark gray diagonal below red */
+            background-color: #2d3748; /* Dark gray */
+            width: 80px;
+            height: 80px;
+            bottom: -50px; /* Position it from the bottom-left */
+            left: -50px;
+            transform: rotate(45deg);
+            clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%);
+        }
+
+        /* ICUE text on the red diagonal */
+        .front-card .diagonal-icue {
+            position: absolute;
+            top: 12.5px; /* Adjusted to fit the diagonal */
+            right: 5px; /* Adjusted to fit the diagonal */
+            transform: rotate(45deg);
+            color: rgb(215, 215, 215);
+            font-weight: bold;
+            font-size: 1.4rem;
+            z-index: 10; /* Ensure it's above the diagonal */
+             /* Glassmorphism additions */
+            background: rgba(255, 255, 255, 0.15); /* semi-transparent white */
+            backdrop-filter: blur(.5px); /* blur behind the element */
+            -webkit-backdrop-filter: blur(.5px); /* Safari support */
+            padding: 0 2.5px; /* add padding for visibility */
+            border-radius: 12px; /* rounded edges */
+            border: 1px solid rgba(255, 255, 255, 0.2); /* subtle border */
+            box-shadow: #2d3748 2px 4px 8px;
+        }
+
+        .front-card .geometry-container {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 0;
+        }
+
+        .front-card .company-qr-code {
+            width: 75px;
+            height: 75px;
+            position: absolute;
+            bottom: 35%;
+            right: 37.5%;
+            z-index: 2;
+            background-color: transparent;
+        }
+
+        .back-card {
+            background-color: #2d3748; /* Dark gray background */
+            color: #fff;
+            align-items: flex-start; /* Align content to the left */
+            justify-content: center; /* Center content vertically */
+            padding-top: 12.5px;;
+            padding-left: 40px; /* More padding for content */
+            text-align: left;
+            gap: 5px;
+            line-height: .25;
+        }
+        .back-card .contact-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 15px;
+        }
+        .back-card .icon {
+            font-size: .75em; /* Adjust icon size */
+            margin-right: 12px;
+            color: #e53e3e; /* Red for icons */
+        }
+        .back-card .text-content {
+            font-size: .75em;
+            color: #e2e8f0; /* Lighter gray for text */
+        }
+
+        .back-card .personal-photo {
+            width: auto;
+            height: 100%;
+            position: absolute;
+            top:35%;
+            left:65%;
+            z-index: 2;
+        }
+
+        .back-card .personal-photo img {
+            height: 100px;
+        }
+
+        /* Diagonal red accent on back card */
+        .back-card::before {
+            content: '';
+            position: absolute;
+            background-color: #e53e3e; /* Red color */
+            width: 100px;
+            height: 100px;
+            top: 0;
+            right: 0;
+            transform: skewY(45deg) translateX(50%) translateY(-30%); /* Creates a diagonal effect */
+            transform-origin: top right;
+        }
+
+        @media screen {
+            .business-card-container,
+            .card-face {
+                width: 9cm;
+                height: 11cm;
+            }
+        }
+
+        /* Basic print styles */
+        @media print {
+            body {
+                background: none;
+                margin: 0;
+                padding: 0;
+                display: block;
+                height: auto;
+                -webkit-print-color-adjust: exact; /* Ensure background colors print */
+                color-adjust: exact;
+            }
+            .business-card-container {
+                width: 9.0cm; /* Standard size */
+                height: 11cm; /* Standard size */
+                gap: 0; /* No gap between faces when printing */
+            }
+            .card-face {
+                width: 9.0cm;
+                height: 11cm;
+                box-shadow: none;
+                border: 0.5px solid #ccc; /* Subtle border for cutting guide */
+                border-radius: 0; /* No rounded corners for printing */
+                page-break-after: always; /* Ensure each card face prints on a new page/side */
+            }
+            /* Adjust font sizes for print if necessary */
+            .text-xl { font-size: .72em; }
+            .text-lg { font-size: 1em; }
+            .text-base { font-size: 0.9em; }
+            .text-sm { font-size: 0.8em; }
+
+             /* Back Card Styles */
+            .back-card {
+                background-color: #2d3748; /* Dark gray background */
+                color: #fff;
+                align-items: flex-start; /* Align content to the left */
+                justify-content: center; /* Center content vertically */
+                padding-left: 40px; /* More padding for content */
+                text-align: left;
+            }
+            /* Ensure background and colors print correctly */
+            .front-card, .back-card {
+                background-color: #ffffff;
+                background-image: none; /* Remove gradients for print */
+            }
+             .front-card::before { /* Red diagonal */
+                background-color: #e53e3e;
+            }
+            .front-card::after { /* Dark gray diagonal below red */
+                background-color: #2d3748;
+            }
+            .back-card {
+                background-color: #2d3748;
+            }
+            .back-card::before {
+                background-color: #e53e3e;
+            }
+        }
+   
