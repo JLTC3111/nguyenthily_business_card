@@ -58,18 +58,17 @@
             font-weight: 700;
         }
         .front-card .name {
-            font-size: .75rem;
+            font-size: .85rem;
             font-weight: 600;
             margin-bottom: 5px;
-            margin-left: 10.75rem;
+
             color: #333;
             line-height: 1;
         }
         .front-card .title {
-            text-align: left;
-            font-size: .625rem;
+            font-size: .725rem;
             color: #555;
-            margin-left: 11rem;
+           
             margin-bottom: -1rem;
         }
 
