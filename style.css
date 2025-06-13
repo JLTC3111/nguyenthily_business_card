@@ -61,15 +61,15 @@
             font-size: .85rem;
             font-weight: 600;
             margin-bottom: 5px;
-
+            margin-left: 2.8rem;
             color: #333;
             line-height: 1;
         }
         .front-card .title {
             font-size: .725rem;
             color: #555;
-           
             margin-bottom: -1rem;
+            margin-left: 3rem;
         }
 
         /* Diagonal red and gray elements for the front card */
@@ -158,13 +158,13 @@
             width: auto;
             height: 100%;
             position: absolute;
-            top:35%;
+            top:25%;
             left:65%;
             z-index: 2;
         }
 
         .back-card .personal-photo img {
-            height: 100px;
+            height: 110px;
         }
 
         /* Diagonal red accent on back card */
