@@ -170,7 +170,13 @@
             height: 75px;
             width: 75px;
             /* Glassmorphism additions */
-            background-color: rgba(255, 255, 255, 0.2); /* A solid semi-transparent white */
+            /* Radial Gradient Example */
+            background: radial-gradient(
+                circle at center, /* Shape: circle, Position: center (default, but explicit is good) */
+                rgba(255, 255, 255, 0.7) 10%, /* Start fully opaque white at center */
+                rgba(255, 255, 255, 0.05) 70%, /* Fade out to transparent white by 70% of the radius */
+                transparent 100% /* Fully transparent at the edge for a softer fade */
+            );
             backdrop-filter: blur(.5px); /* blur behind the element */
             -webkit-backdrop-filter: blur(.5px); /* Safari support */
             padding: .5px 3.5px; /* add padding for visibility */
