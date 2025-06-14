@@ -149,6 +149,11 @@
             margin-right: 12px;
             color: #e53e3e; /* Red for icons */
         }
+
+        .back-card .contact-item svg {
+            margin-right: 13px;
+        }
+
         .back-card .text-content {
             font-size: .75em;
             color: #e2e8f0; /* Lighter gray for text */
